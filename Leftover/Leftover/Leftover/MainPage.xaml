@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Leftover"
              x:Class="Leftover.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <!--<ActivityIndicator Color="Red" IsRunning="True"/>-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name=" Leftovers"/>
+        <ToolbarItem Text="Item 1" Priority="0" Order="Primary"/>
+
+    </ContentPage.ToolbarItems>
+  
 </ContentPage>

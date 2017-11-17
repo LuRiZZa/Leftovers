@@ -9,9 +9,23 @@ namespace Leftover
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage()
+        
+        
+        public MainPage()
 		{
-			InitializeComponent();
-		}
-	}
+            InitializeComponent();
+      
+            
+
+
+            
+
+        }
+
+
+        private void MenuBar(object sender, EventArgs e)
+        {
+            
+        }
+    }
 }
