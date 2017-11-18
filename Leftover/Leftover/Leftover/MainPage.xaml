@@ -5,15 +5,22 @@
              x:Class="Leftover.MainPageLoader">
             
     <!--<ActivityIndicator Color="Red" IsRunning="True"/>-->
-
-    <ContentPage.ToolbarItems Title="LEFTOVERS">
+    <StackLayout>
+        <Label x:Name="UsernameLbl" Text="Username" />
+        <Entry x:Name="UsernameEntry" Placeholder="Username" />
+        <Label x:Name="PasswordLbl" Text="Password" />
+        <Entry x:Name="PasswordEntry" Placeholder="Password" />
+        <Button x:Name="LoginBtn" Text="Login" Clicked="LoginClick" />
+    </StackLayout>
+    <!--<ContentPage.ToolbarItems Title="LEFTOVERS">
 
 
         <ToolbarItem Name=" Leftovers" />
         
 
-    </ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>-->
 
-   
-       
+    
+
+
 </ContentPage>
