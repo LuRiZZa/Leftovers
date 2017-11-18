@@ -9,7 +9,7 @@ namespace Leftover
 {
 	public partial class MainPage : ContentPage
 	{
-        
+        public Page p;
         
         public MainPage()
 		{
@@ -23,7 +23,11 @@ namespace Leftover
         {
             if (UsernameEntry.Text == "Admin" && PasswordEntry.Text == "Admin")
             {
-                Navigation.PushModalAsync(new Shop());
+                //Navigation.PushModalAsync(new Shop());
+                p = new NavigationPage(new Leftover.Shop());
+
+                Navigation.PushModalAsync(p);
+                    
             }
         }
     }
