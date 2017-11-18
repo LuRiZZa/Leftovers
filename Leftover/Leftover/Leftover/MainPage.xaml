@@ -2,12 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Leftover"
-             x:Class="Leftover.MainPage">
+             x:Class="Leftover.MainPageLoader">
+            
     <!--<ActivityIndicator Color="Red" IsRunning="True"/>-->
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Name=" Leftovers"/>
-        <ToolbarItem Text="Item 1" Priority="0" Order="Primary"/>
+
+    <ContentPage.ToolbarItems Title="LEFTOVERS">
+
+
+        <ToolbarItem Name=" Leftovers" />
+        
 
     </ContentPage.ToolbarItems>
-  
+
+   
+       
 </ContentPage>

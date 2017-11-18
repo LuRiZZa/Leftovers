@@ -13,13 +13,8 @@ namespace Leftover
         
         public MainPage()
 		{
-            InitializeComponent();
+            //InitializeComponent();
       
-            
-
-
-            
-
         }
 
 

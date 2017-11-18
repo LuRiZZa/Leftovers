@@ -13,8 +13,10 @@ namespace Leftover
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new Leftover.MainPageLoader());
-		}
+            //MainPage = new Leftover.MainPageLoader();
+            MainPage = new NavigationPage(new Leftover.MainPageLoader());
+
+        }
    
         protected override void OnStart ()
 		{

@@ -1,26 +1,44 @@
-﻿using System;
+﻿
+
+
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 using Xamarin.Forms;
 
 namespace Leftover
 {
-    public class MainPageLoader : ContentPage
+    public partial class MainPageLoader : ContentPage
     {
+
         static Image imageFirst;
+
+
         public MainPageLoader()
         {
+            InitializeComponent();
+            var page = new NavigationPage();
+            
+            NavigationPage.SetTitleIcon(page, "FoodImage1.jpg");
 
+
+            
            
             var toolbar1 = new ToolbarItem
             {
                 Text = "item 1 ",
-                Name = "Leftovers",
-                
+
+
+
             };
-            
-            //this.ToolbarItems.Add(new ToolbarItem("item 1","", () => { }));
+
             this.ToolbarItems.Add(toolbar1);
+
+
+
+            //this.ToolbarItems.Add(new ToolbarItem("item 1","", () => { }));
+
 
 
             Label label = new Label
@@ -29,15 +47,15 @@ namespace Leftover
                 Text = "Leftovers",
 
                 Font = Font.SystemFontOfSize(NamedSize.Large),
-                
+
                 //FontAttributes = FontAttributes.Bold,
                 HorizontalOptions = LayoutOptions.Center
-                
+
             };
 
             Label imageFirstLabel = new Label
             {
-                
+
                 Text = "Leftovers",
                 Font = Font.SystemFontOfSize(NamedSize.Medium),
                 //FontAttributes = FontAttributes.Bold,
@@ -83,15 +101,15 @@ namespace Leftover
                 imageSecond
                 }
             };
-            
-          
-      
+
+
+
 
         }
-        
+
         void ImageFirstTapped()
         {
-            
+
             Navigation.PushModalAsync(new Food());
         }
 
@@ -101,7 +119,7 @@ namespace Leftover
         }
         void Settingsbutton()
         {
-            
+
             Navigation.PushModalAsync(new Food());
         }
 
