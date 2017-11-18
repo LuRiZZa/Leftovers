@@ -14,7 +14,7 @@ namespace Leftover
 			InitializeComponent();
 
             //MainPage = new Leftover.MainPageLoader();
-            MainPage = new NavigationPage(new Leftover.MainPageLoader());
+            MainPage = new NavigationPage(new Leftover.MainPage());
 
         }
    

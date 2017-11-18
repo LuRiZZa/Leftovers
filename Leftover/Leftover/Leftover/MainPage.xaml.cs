@@ -13,14 +13,18 @@ namespace Leftover
         
         public MainPage()
 		{
-            //InitializeComponent();
-      
+            
+                InitializeComponent();
+
         }
 
 
-        private void MenuBar(object sender, EventArgs e)
+        void LoginClick(object sender, EventArgs e)
         {
-            
+            if (UsernameEntry.Text == "Admin" && PasswordEntry.Text == "Admin")
+            {
+                Navigation.PushModalAsync(new Shop());
+            }
         }
     }
 }

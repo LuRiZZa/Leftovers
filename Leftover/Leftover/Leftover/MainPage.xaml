@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Leftover"
-             x:Class="Leftover.MainPageLoader">
+             x:Class="Leftover.MainPage">
             
-    <!--<ActivityIndicator Color="Red" IsRunning="True"/>-->
+
     <StackLayout>
         <Label x:Name="UsernameLbl" Text="Username" />
         <Entry x:Name="UsernameEntry" Placeholder="Username" />
@@ -12,13 +12,7 @@
         <Entry x:Name="PasswordEntry" Placeholder="Password" />
         <Button x:Name="LoginBtn" Text="Login" Clicked="LoginClick" />
     </StackLayout>
-    <!--<ContentPage.ToolbarItems Title="LEFTOVERS">
 
-
-        <ToolbarItem Name=" Leftovers" />
-        
-
-    </ContentPage.ToolbarItems>-->
 
     
 
