@@ -9,17 +9,24 @@ using Xamarin.Forms.Xaml;
 
 namespace Leftover
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Shop : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Shop : ContentPage
+    {
 
         static Image imageFirst;
+        SearchBar searchBar;
+        static Label sResultLabel;
 
-        public Shop ()
-		{
-			InitializeComponent ();
+        public Shop()
+        {
+            InitializeComponent();
+
+
+
 
             var page = new NavigationPage();
+
+
 
             NavigationPage.SetTitleIcon(page, "FoodImage1.jpg");
 
@@ -89,16 +96,54 @@ namespace Leftover
                 Command = new Command(() => ImageSecondTapped())
             });
 
-
-            this.Content = new StackLayout
+            sResultLabel = new Label
             {
-                Children =
-                {
+                Text = "The result is:",
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                FontSize = 25
+            };
 
-                imageFirst,
-                imageSecond
+
+            searchBar = new SearchBar
+            {
+                Placeholder = "Enter your search terms here:",
+                SearchCommand = new Command(() => { sResultLabel.Text = "result:" + searchBar.Text; }),
+                HeightRequest = 50
+
+            };
+
+
+
+
+            Application.Current.MainPage = new ContentPage
+            {
+                Content = new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.Start,
+                    Children =
+                   {
+                        imageFirst,
+                        imageSecond,
+                       new Label
+                       {
+                           HorizontalTextAlignment = TextAlignment.Center,
+                           Text = "SearchBar",
+                           FontSize = 50
+                       },
+                       searchBar,
+                       new ScrollView
+                       {
+                           Content = sResultLabel,
+                           VerticalOptions = LayoutOptions.FillAndExpand
+                       }
+
+
+                   },
+                    Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5)
                 }
             };
+
+            
 
         }
 

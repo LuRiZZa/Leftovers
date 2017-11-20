@@ -15,9 +15,10 @@ namespace Leftover
 		{
             
                 InitializeComponent();
+            
 
         }
-
+        
 
         void LoginClick(object sender, EventArgs e)
         {
