@@ -30,15 +30,6 @@ namespace Leftover
 
             NavigationPage.SetTitleIcon(page, "FoodImage1.jpg");
 
-            var toolbar1 = new ToolbarItem
-            {
-                Text = "item 1 ",
-
-
-
-            };
-
-            this.ToolbarItems.Add(toolbar1);
 
 
 
@@ -72,6 +63,9 @@ namespace Leftover
             imageFirst = new Image
             {
                 Source = ImageSource.FromFile("FoodImage1.jpg"),
+                WidthRequest = Application.Current.MainPage.Width,
+                HeightRequest = 50,
+                Aspect = Aspect.AspectFill,
                 TranslationY = 20
 
             };
@@ -115,12 +109,11 @@ namespace Leftover
 
 
 
-            Application.Current.MainPage = new ContentPage
+
+            Content = new StackLayout
             {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Start,
-                    Children =
+                VerticalOptions = LayoutOptions.Start,
+                Children =
                    {
                         imageFirst,
                         imageSecond,
@@ -139,11 +132,20 @@ namespace Leftover
 
 
                    },
-                    Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5)
-                }
+                Padding = new Thickness(10, Device.OnPlatform(20, 0, 0), 10, 5)
+            };
+            
+
+
+            var toolbar1 = new ToolbarItem
+            {
+                Text = "item 1 ",
+
+
+
             };
 
-            
+            this.ToolbarItems.Add(toolbar1);
 
         }
 
