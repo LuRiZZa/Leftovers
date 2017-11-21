@@ -22,10 +22,10 @@ namespace Leftover
 
         void LoginClick(object sender, EventArgs e)
         {
-            if (UsernameEntry.Text == "Admin" && PasswordEntry.Text == "Admin")
+            if (UsernameEntry.Text == "A" && PasswordEntry.Text == "A")
             {
                 //Navigation.PushModalAsync(new Shop());
-                p = new NavigationPage(new Leftover.Shop());
+                p = new NavigationPage(new Leftover.GridTest());
 
                 Navigation.PushModalAsync(p);
                     
