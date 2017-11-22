@@ -64,7 +64,7 @@ namespace Leftover
             {
                 Source = ImageSource.FromFile("FoodImage1.jpg"),
                 WidthRequest = Application.Current.MainPage.Width,
-                HeightRequest = 50,
+                HeightRequest = 100,
                 Aspect = Aspect.AspectFill,
                 TranslationY = 20
 
@@ -81,7 +81,8 @@ namespace Leftover
             {
 
                 Source = ImageSource.FromFile("FoodImage1.jpg"),
-
+                WidthRequest = Application.Current.MainPage.Width,
+                HeightRequest = 100,
                 //TranslationY = imageFirst.TranslationY + 10,
             };
 
