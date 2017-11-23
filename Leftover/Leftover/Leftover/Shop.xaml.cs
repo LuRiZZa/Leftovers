@@ -153,17 +153,17 @@ namespace Leftover
         void ImageFirstTapped()
         {
 
-            Navigation.PushModalAsync(new Food());
+            Navigation.PushAsync(new Food());
         }
 
         void ImageSecondTapped()
         {
-            Navigation.PushModalAsync(new Food());
+            Navigation.PushAsync(new Food());
         }
         void Settingsbutton()
         {
 
-            Navigation.PushModalAsync(new Food());
+            Navigation.PushAsync(new Food());
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Leftover
 {
     public partial class App : Application
     {
-
+        public static Size Screensize;
 
 
         public App()
