@@ -1,5 +1,5 @@
 ﻿
-using Android.Views;
+//using Android.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +18,8 @@ namespace Leftover
         ScrollView scroller;
         Label descriptionLabel;
         Grid stackL = new Grid();
+
+
         //public double fisse;
         List<ContentPage> listConView = new List<ContentPage>();
 
@@ -29,20 +31,76 @@ namespace Leftover
             ContentPresenter p;
 
 
+            //AbsoluteLayout al = new AbsoluteLayout()
+            //{
+            //    WidthRequest = Application.Current.MainPage.Width,
+            //    BackgroundColor = Color.White,
+            //    //HorizontalOptions = LayoutOptions.Center,
+            //    // VerticalOptions = LayoutOptions.Center
+            //};
 
-            AbsoluteLayout al = new AbsoluteLayout()
+
+            scroller = new Xamarin.Forms.ScrollView
             {
-                WidthRequest = Application.Current.MainPage.Width,
-            BackgroundColor = Color.White,
-            //HorizontalOptions = LayoutOptions.Center,
-           // VerticalOptions = LayoutOptions.Center
+                Orientation = ScrollOrientation.Vertical,
+                HeightRequest = 180,
+                WidthRequest = Application.Current.MainPage.Width - 100,
+                TranslationY = 20
+
             };
-            string style = "Rectangle";
-
-            
-           BoxView boxView = new BoxView
+            descriptionLabel = new Label
             {
+                Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pellentesque libero ut ligula eleifend placerat. Morbi quam velit, sollicitudin eu ipsum non, vestibulum auctor purus. In volutpat urna non est sollicitudin sollicitudin. Quisque ornare ante sed velit tristique, quis dignissim nisi imperdiet. Nunc in ultricies massa, facilisis suscipit est. Pellentesque gravida tincidunt nisi, non mattis nisi euismod nec. Ut eu consectetur nisl. Nunc in faucibus orci, ac venenatis neque. Cras tristique, eros eu ultricies interdum, lacus felis hendrerit purus, et ultrices magna arcu et sapien. Morbi non justo sapien. Mauris egestas arcu vitae luctus laoreet. Proin posuere magna sit amet ex malesuada, id volutpat orci dictum. Mauris tempor eget leo et sagittis. Vivamus risus mi, ullamcorper id nibh vel, pretium porttitor arcu. Nullam ut egestas velit. Fusce lacus tortor, ullamcorper volutpat tincidunt at, imperdiet vitae lectus.",
+                //FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Font)),
+                FontSize = 18,
+                BackgroundColor = Color.LightGray,
+                TextColor = Color.Blue,
+
+                //VerticalOptions = LayoutOptions.Center,
+                //HorizontalOptions = LayoutOptions.End,
+                //HeightRequest = 300,
+                //WidthRequest = Application.Current.MainPage.Width - 50
+            };
+
+            //AbsoluteLayout.SetLayoutBounds(scroller, new Rectangle(.10, .20, 0.8, 0.8));
+           // AbsoluteLayout.SetLayoutFlags(scroller, AbsoluteLayoutFlags.All);
+
+
+            Image DescriptionImage = new Image
+            {
+                Source = ImageSource.FromFile("FoodImage1.jpg"),
+               // Aspect = Aspect.AspectFit,
+                WidthRequest = Application.Current.MainPage.Width,
+                HeightRequest = 180,
                 
+                //TranslationY = 10
+
+            };
+            var absoluteLayout = new AbsoluteLayout();
+
+            var stackLayout = new StackLayout
+            {
+                Children =
+                {
+                    DescriptionImage,
+                    
+                    descriptionLabel,
+                    scroller,
+
+                }
+            };
+
+            //absoluteLayout.Children.Add(DescriptionImage, new Rectangle(.10, .10, 3, 3));
+            absoluteLayout.Children.Add(stackLayout, new Rectangle(.05, .05, 3, 3), AbsoluteLayoutFlags.All);
+            //DescriptionImage.WidthRequest = Application.Current.MainPage.Width;
+            scroller.Scale = 0.8f;
+            //al.Children.Add(DescriptionImage);
+
+
+
+            BoxView boxView = new BoxView
+            {
+
                 BackgroundColor = Color.Green,
                 WidthRequest = 50,
                 HeightRequest = 20
@@ -50,52 +108,56 @@ namespace Leftover
                 //VerticalOptions = LayoutOptions.Center
 
             };
-            AbsoluteLayout.SetLayoutBounds(boxView, new Rectangle( .10, .10, 1, 1));
-            AbsoluteLayout.SetLayoutFlags(boxView, AbsoluteLayoutFlags.All);
+            //AbsoluteLayout.SetLayoutBounds(boxView, new Rectangle(.10, .10, 1, 1));
+            //AbsoluteLayout.SetLayoutFlags(boxView, AbsoluteLayoutFlags.All);
 
 
-            descriptionLabel = new Label
-            {
-                Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pellentesque libero ut ligula eleifend placerat. Morbi quam velit, sollicitudin eu ipsum non, vestibulum auctor purus. In volutpat urna non est sollicitudin sollicitudin. Quisque ornare ante sed velit tristique, quis dignissim nisi imperdiet. Nunc in ultricies massa, facilisis suscipit est. Pellentesque gravida tincidunt nisi, non mattis nisi euismod nec. Ut eu consectetur nisl. Nunc in faucibus orci, ac venenatis neque. Cras tristique, eros eu ultricies interdum, lacus felis hendrerit purus, et ultrices magna arcu et sapien. Morbi non justo sapien. Mauris egestas arcu vitae luctus laoreet. Proin posuere magna sit amet ex malesuada, id volutpat orci dictum. Mauris tempor eget leo et sagittis. Vivamus risus mi, ullamcorper id nibh vel, pretium porttitor arcu. Nullam ut egestas velit. Fusce lacus tortor, ullamcorper volutpat tincidunt at, imperdiet vitae lectus.",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Font)),
-                //FontSize = 30,
-                TextColor = Color.Blue,
-                //VerticalOptions = LayoutOptions.Center,
-                //HorizontalOptions = LayoutOptions.End,
-                //HeightRequest = 300,
-                //WidthRequest = Application.Current.MainPage.Width - 50
-            };
-            
-            AbsoluteLayout.SetLayoutBounds(descriptionLabel, new Rectangle(.10, .10, 1, 1));
-            AbsoluteLayout.SetLayoutFlags(descriptionLabel, AbsoluteLayoutFlags.All);
 
-            scroller = new Xamarin.Forms.ScrollView
-            {
-                Orientation = ScrollOrientation.Vertical,
-                HeightRequest = 300,
-                WidthRequest = Application.Current.MainPage.Width - 50
-            };
 
-            
-            AbsoluteLayout.SetLayoutBounds(scroller, new Rectangle(.10, .10, 1, 1));
-            AbsoluteLayout.SetLayoutFlags(scroller, AbsoluteLayoutFlags.All);
+            //AbsoluteLayout.SetLayoutBounds(descriptionLabel, new Rectangle(.10, .10, 1, 1));
+            //AbsoluteLayout.SetLayoutFlags(descriptionLabel, AbsoluteLayoutFlags.All);
+
+
             //scroller.Content = al;
-       
 
-            al.Children.Add(boxView);
+
+            //al.Children.Add(absoluteLayout);
+            //al.Children.Add(stackLayout);
             //al.Children.Add(descriptionLabel);
-            al.Children.Add(scroller);
-            for (int i = 0; i < al.Children.Count; i++)
-            {
-                al.Children[i].ScaleTo(0.5f, 250, Easing.BounceIn);
-                //al.Children[i].HeightRequest = (Application.Current.MainPage.Height * 0.5f);
-                //al.Children[i].WidthRequest = (Application.Current.MainPage.Width * 0.5f) ;
-            }
+            //al.Children.Add(scroller);
+
+
+            //for (int i = 0; i < al.Children.Count; i++)
+            //{
+            //    al.Children[i].ScaleTo(0.7f, 250, Easing.BounceIn);
+            //    al.Children[i].HeightRequest = (Application.Current.MainPage.Height * 0.5f);
+            //    al.Children[i].WidthRequest = (Application.Current.MainPage.Width * 0.5f);
+            //}
+
+            // this.Content = DescriptionImage
 
             scroller.Content = descriptionLabel;
-           // scroller.Content = al.Children[1];
+            this.Content = descriptionLabel;
+
+            //scroller.Content = al.Children[1];
+
             
-            this.Content = al;
+
+
+            this.Content = stackLayout;
+
+
+            //AbsoluteLayout al2 = new AbsoluteLayout
+            //{
+            //    WidthRequest = Application.Current.MainPage.Width,
+            //    BackgroundColor = Color.White,
+
+            //};
+
+
+
+
+            //this.Content = al;
             //this.Content = scroller;
             // this.Content = scroller;
             //BoxView box = new BoxView()

@@ -10,7 +10,7 @@
 
 
         <ToolbarItem Name=" Leftovers" />
-        
+        <!--<SearchBar Placeholder="Search" Text="{Binding Filter}" />-->
 
     </ContentPage.ToolbarItems>
 
