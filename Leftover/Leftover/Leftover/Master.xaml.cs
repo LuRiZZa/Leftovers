@@ -12,18 +12,24 @@ namespace Leftover
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Master : ContentPage
 	{
-        Grid grid = new Grid();
+        private Grid grid = new Grid();
+
+        private int margin = 5;
+
+        readonly int fontProfileNameSize = 15;
+        readonly int fontLabelSize = 12;
 
         public Master()
         {
             InitializeComponent();
 
             LoadDataToGrid();
-
+            
             this.Content = grid;
-
            
         }
+
+
 
         private void LoadDataToGrid()
         {
@@ -37,8 +43,7 @@ namespace Leftover
             //grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(4, GridUnitType.Star) });
 
             grid.Children.Add(UsernameLbl(), 1, 0);
-
-
+            
             RowSmallHeight();
             BoxView temp = CreateLine();
             grid.Children.Add(temp, 0, 1);
@@ -148,7 +153,7 @@ namespace Leftover
             {
                 Source = ImageSource.FromFile("Icon.png"),
                 HorizontalOptions = LayoutOptions.Start,
-                TranslationX = 5,
+                TranslationX = margin,
                 HeightRequest = 35,
                 WidthRequest = 35
             };
@@ -161,7 +166,7 @@ namespace Leftover
             {
                 Source = ImageSource.FromFile("CategoryIconSmall.png"),
                 HorizontalOptions = LayoutOptions.Start,
-                TranslationX = 5,
+                TranslationX = margin,
                 HeightRequest = 35,
                 WidthRequest = 35
             };
@@ -174,7 +179,7 @@ namespace Leftover
             {
                 Source = ImageSource.FromFile("AboutUsIcon.png"),
                 HorizontalOptions = LayoutOptions.Start,
-                TranslationX = 5,
+                TranslationX = margin,
                 HeightRequest = 35,
                 WidthRequest = 35
             };
@@ -192,7 +197,7 @@ namespace Leftover
                 VerticalOptions = LayoutOptions.Center,
                 HeightRequest = 50,
                 WidthRequest = 50,
-                TranslationX = 5
+                TranslationX = margin
             };
             return image;
         }
@@ -205,12 +210,13 @@ namespace Leftover
                 HorizontalOptions = LayoutOptions.Start,
                 VerticalOptions = LayoutOptions.Center,
                 TextColor = Color.Black,
-                FontSize = 15,
+                FontSize = fontProfileNameSize,
                 FontAttributes = FontAttributes.Bold
             };
             return label;
         }
 
+        // Line between buttons
         private BoxView CreateLine()
         {
             BoxView boxView = new BoxView
@@ -223,6 +229,8 @@ namespace Leftover
             return boxView;
         }
 
+
+        // This is the place where the names on the different buttons will show
         private Label ButtonLabels(string text)
         {
             Label label = new Label
@@ -231,10 +239,15 @@ namespace Leftover
                 HorizontalOptions = LayoutOptions.Start,
                 VerticalOptions = LayoutOptions.Center,
                 TextColor = Color.Black,
-                FontSize = 12
+                TranslationX = margin,
+                FontSize = fontLabelSize
             };
             return label;
         }
+
+
+
+        //Button getting created here. Dont edit text since it will not get rendered
 
         private Button CreateBtnCategory()
         {
@@ -326,11 +339,16 @@ namespace Leftover
             Button button = new Button
             {
                 Text = "Log out",
-                BackgroundColor = Color.White
+                BackgroundColor = Color.White,
+                HorizontalOptions = LayoutOptions.Start,
+                VerticalOptions = LayoutOptions.End
             };
             button.Clicked += LogoutBtn_Clicked;
             return button;
         }
+
+
+        //BUTTONS. ADD WHAT TO DO INSIDE
 
         private void CatBtn_Clicked(object sender, EventArgs e)
         {

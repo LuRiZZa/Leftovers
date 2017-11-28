@@ -20,6 +20,7 @@ namespace Leftover
         {
             InitializeComponent();
 
+            // This for loop will populate the page with all the shops/items. (Needs to be implemented: Need the shops/items(data) from somewhere else, distance need to be calculated)
             for (int i = 0; i <= 9; i++)
             {
                 grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(99) } );
@@ -33,7 +34,7 @@ namespace Leftover
 
         
 
-
+            // adding a scroll to the grid. So you can view data if it is outside the mobile screen.
             ScrollView Scroll = new ScrollView
             {
                 Orientation = ScrollOrientation.Vertical
@@ -51,7 +52,10 @@ namespace Leftover
         }
 
 
-
+        /// <summary>
+        /// Labels, boxview and image for one shop/item. Can be edited for the future (Need to be fixed: work on all screens)
+        /// </summary>
+        /// <returns></returns>
         public Label ShopLbl()
         {
             Label label = new Label
@@ -117,6 +121,8 @@ namespace Leftover
             Image image = new Image
             {
                 Source = ImageSource.FromFile("FoodImage1.jpg"),
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand
                 //HeightRequest = grid.Height,
                 //MinimumWidthRequest = Application.Current.MainPage.Width
                 //HorizontalOptions = LayoutOptions.Center,  // Denne blokere WidthRequest

@@ -18,8 +18,8 @@ namespace Leftover
 
             
 
-            //MainPage = new Leftover.MainPageLoader();
-            MainPage = new NavigationPage(new Leftover.MainPage());
+            MainPage = new Leftover.MainPage();
+            //MainPage = new NavigationPage(new Leftover.MainPage());
 
 
 
