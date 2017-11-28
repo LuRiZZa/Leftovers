@@ -7,30 +7,21 @@ using Xamarin.Forms;
 
 namespace Leftover
 {
-	public partial class MainPage : ContentPage
-	{
+	public partial class MainPage : MasterDetailPage
+    {
         public Page p;
-        
+
         public MainPage()
-		{
-            
-                InitializeComponent();
-            
+        {
+
+            InitializeComponent();
+            this.Master = new Master();
+            this.Detail = new NavigationPage(new Detail());
 
         }
         
 
-        void LoginClick(object sender, EventArgs e)
-        {
-            if (UsernameEntry.Text == "" && PasswordEntry.Text == "")
-            {
-                //Navigation.PushModalAsync(new Shop());
-                p = new NavigationPage(new Leftover.Shop());
-
-                Navigation.PushModalAsync(p);
-                    
-            }
-        }
+        
         
     }
 }
