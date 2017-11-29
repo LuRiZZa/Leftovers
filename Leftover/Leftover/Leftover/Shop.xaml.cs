@@ -18,8 +18,7 @@ namespace Leftover
         public Shop()
         {
             InitializeComponent();
-
-
+            
             // This for loop will populate the page with all the shops/items. (Needs to be implemented: Need the shops/items(data) from somewhere else, distance need to be calculated)
             for (int i = 0; i <= 9; i++)
             {
