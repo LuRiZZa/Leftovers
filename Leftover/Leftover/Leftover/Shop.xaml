@@ -5,22 +5,4 @@
              Title="Shop"
              BackgroundColor="White">
     
-    
-    <!--<ContentPage.Content>-->
-
-        <ContentPage.ToolbarItems Title="LEFTOVERS">
-
-
-        <ToolbarItem Name=" Leftovers" />
-        <!--<SearchBar Placeholder="Search" Text="{Binding Filter}" />-->
-
-    </ContentPage.ToolbarItems>
-
-        <!--<StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>-->
-    <!--</ContentPage.Content>-->
-    
 </ContentPage>
