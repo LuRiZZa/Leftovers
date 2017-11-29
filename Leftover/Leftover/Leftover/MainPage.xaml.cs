@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace Leftover
 {
-	public partial class MainPage : MasterDetailPage
+	public partial class MainPage : ContentPage
     {
         public Page p;
 
@@ -15,8 +15,7 @@ namespace Leftover
         {
 
             InitializeComponent();
-            this.Master = new Master();
-            this.Detail = new NavigationPage(new Detail());
+            
 
         }
         

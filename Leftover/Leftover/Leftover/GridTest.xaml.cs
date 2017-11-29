@@ -14,12 +14,10 @@ namespace Leftover
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GridTest : ContentPage
     {
-        
         Grid grid = new Grid();
         public GridTest()
         {
             InitializeComponent();
-
             // This for loop will populate the page with all the shops/items. (Needs to be implemented: Need the shops/items(data) from somewhere else, distance need to be calculated)
             for (int i = 0; i <= 9; i++)
             {
@@ -45,6 +43,7 @@ namespace Leftover
 
             this.Content = grid;
             this.Content = Scroll;
+            
 
 
 
@@ -121,16 +120,16 @@ namespace Leftover
             Image image = new Image
             {
                 Source = ImageSource.FromFile("FoodImage1.jpg"),
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand
                 //HeightRequest = grid.Height,
                 //MinimumWidthRequest = Application.Current.MainPage.Width
                 //HorizontalOptions = LayoutOptions.Center,  // Denne blokere WidthRequest
                 //VerticalOptions = LayoutOptions.End // Denne blokere WidthRequest
-                
+
                 //TranslationY = LabelBackground().TranslationY - LabelBackground().HeightRequest
-                
-                
+
+
             };
             
             return image;

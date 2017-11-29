@@ -363,7 +363,7 @@ namespace Leftover
 
         private void AboutBtn_Clicked(object sender, EventArgs e)
         {
-
+            //Navigation.Pop
         }
 
         private void ContactBtn_Clicked(object sender, EventArgs e)

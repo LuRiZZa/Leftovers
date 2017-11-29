@@ -20,14 +20,17 @@ namespace Leftover
 
         void LoginClick(object sender, EventArgs e)
         {
-            if (UsernameEntry.Text == "" && PasswordEntry.Text == "")
+            if (UsernameEntry.Text == "1" && PasswordEntry.Text == "1")
             {
                 //Navigation.PushModalAsync(new Shop());
                 //p = new NavigationPage();
 
-                Navigation.PushModalAsync(new Leftover.Shop());
+                //Navigation.PushModalAsync(new Leftover.Shop());
+
+                Application.Current.MainPage = new MasDetPage(new GridTest());
 
             }
+            //if logged in Application.Current.MainPage = new MasDetPage(new GridTest());
         }
     }
 }

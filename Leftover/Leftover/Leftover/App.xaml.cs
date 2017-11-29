@@ -18,7 +18,7 @@ namespace Leftover
 
             
 
-            MainPage = new Leftover.MainPage();
+            MainPage = new Leftover.Login();
             //MainPage = new NavigationPage(new Leftover.MainPage());
 
 
