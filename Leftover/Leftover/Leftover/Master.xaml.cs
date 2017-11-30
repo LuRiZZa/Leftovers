@@ -215,7 +215,7 @@ namespace Leftover
             };
             return label;
         }
-
+        
         // Line between buttons
         private BoxView CreateLine()
         {
@@ -368,7 +368,7 @@ namespace Leftover
 
         private void ContactBtn_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushModalAsync(new Contact());
         }
 
         private void SetBtn_Clicked(object sender, EventArgs e)
