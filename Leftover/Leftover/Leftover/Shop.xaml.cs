@@ -29,6 +29,7 @@ namespace Leftover
                 grid.Children.Add(ShopLbl(), 0, i);
                 grid.Children.Add(PriceLbl(), 0, i);
                 grid.Children.Add(DistanceLbl(), 0, i);
+                grid.Children.Add(ButtonForground(), 0, i);
             }
 
 
@@ -130,6 +131,22 @@ namespace Leftover
             };
 
             return image;
+
+        }
+        public Button ButtonForground()
+        {
+            Button butt = new Button
+            {
+                Opacity = 0,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand
+            };
+            butt.Clicked += ButtonClicked;
+            return butt;
+        }
+        public void ButtonClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MasDetPage(new Food()));
 
         }
     }

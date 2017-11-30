@@ -15,14 +15,8 @@ namespace Leftover
         public App()
         {
             InitializeComponent();
-
-            
-
             MainPage = new Leftover.Login();
             //MainPage = new NavigationPage(new Leftover.MainPage());
-
-
-
         }
 
         protected override void OnStart()
