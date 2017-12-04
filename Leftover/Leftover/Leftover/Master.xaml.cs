@@ -376,9 +376,17 @@ namespace Leftover
 
         }
 
+        /// <summary>
+        /// Strings er der for fremtiden. Hvis nu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShareBtn_Clicked(object sender, EventArgs e)
         {
-
+            string mail = "mailto:";
+            string subject = "?subject=Leftovers";
+            string body = "&body=Try out this new app from leftovers. www.Google.dk";
+            Device.OpenUri(new Uri(mail + subject + body));
         }
 
         private void LogoutBtn_Clicked(object sender, EventArgs e)

@@ -9,6 +9,7 @@
             <Label x:Name="PasswordLbl" Text="Password" />
             <Entry x:Name="PasswordEntry" Placeholder="Password" />
             <Button x:Name="LoginBtn" Text="Login" Clicked="LoginClick" />
+            
         </StackLayout>
 
     </ContentPage.Content>
