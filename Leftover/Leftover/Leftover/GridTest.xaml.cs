@@ -58,7 +58,8 @@ namespace Leftover
 
 
                 catGrid.Children.Add(CatLbl("Mad og råvarer" + i), 0, i);
-               // catGrid.Children.Add(LabelBackground(), 0, i);
+                catGrid.Children.Add(ButtonForground(), 0, i);
+                // catGrid.Children.Add(LabelBackground(), 0, i);
 
 
 
@@ -201,6 +202,7 @@ namespace Leftover
                 Aspect = Aspect.AspectFill,
                 TranslationY = 20
             };
+        
             return imageFirst;
         }
 
@@ -240,7 +242,16 @@ namespace Leftover
             };
             return boxView;
         }
-        
+        public Button ButtonForground()
+        {
+            Button button = new Button
+            {
+                Opacity = 0,
+                
+            };
+            button.Clicked += ImageFirstTapped;
+            return button;
+        }
 
         //public Label FoodLabel()
         //{
@@ -355,21 +366,21 @@ namespace Leftover
 
         //    //return label;
         //}
-        void ImageFirstTapped()
+        void ImageFirstTapped(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new Food());
+            Navigation.PushAsync(new MasDetPage(new Shop()));
         }
 
-        void ImageSecondTapped()
-        {
-            Navigation.PushAsync(new Food());
-        }
-        void Settingsbutton()
-        {
+        //void ImageSecondTapped()
+        //{
+        //    Navigation.PushAsync(new Food());
+        //}
+        //void Settingsbutton()
+        //{
 
-            Navigation.PushAsync(new Food());
-        }
+        //    Navigation.PushAsync(new Food());
+        //}
 
 
 
