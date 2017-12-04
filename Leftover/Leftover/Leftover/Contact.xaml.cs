@@ -13,93 +13,132 @@ namespace Leftover
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Contact : ContentPage
     {
-        public Image Image { get; set; }
-
-        Grid grid = new Grid();
-
-        ListView lv = new ListView();
-        List<Grid> lGrid = new List<Grid>();
-
+        Editor userName = new Editor();
+        Editor lastName = new Editor();
+        Editor title = new Editor();
+        Editor message = new Editor();
+        ScrollView scroll = new ScrollView();
+        StackLayout ContactStack = new StackLayout();
+      
         public Contact()
         {
             InitializeComponent();
 
-            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(99) });
 
-            StackLayout stLayout = new StackLayout();
-            stLayout.Children.Add(LvView());
+            //ContactStack = new StackLayout();
+          
+           // ContactStack.Children.Add(Scroller());
+            ContactStack.Children.Add(Name());
+            ContactStack.Children.Add(LastName());
+            ContactStack.Children.Add(Title());
+            ContactStack.Children.Add(Message());
+            ContactStack.Children.Add(Message2());
 
-            grid.Children.Add(ImagCell(),0,2,0,2);
-            grid.Children.Add(Contactlbl("silvio", 10101010, "sili@sili.dk"),2,3,0,1);
-            for (int i = 0; i <=4 ; i++)
-            {
-                lGrid.Add(grid);
-            }
+            //ContactStack.Children.Add(Message2());
+
+
+
+            // var absoluteLay = new AbsoluteLayout();
+
+            //absoluteLay.Children.Add(ContactStack);
+
+            scroll.Content = ContactStack;
+            //this.Content = Scroller();
+            Content = scroll;
             
-            lv = new ListView();
-            lv.ItemsSource = lGrid;
-            lv.RowHeight = 100;
-
-
-            lv.ItemTemplate = new DataTemplate(() =>
-            {
-                //ImagCell();
-                //Contactlbl("silvio", 10101010, "sili@sili.dk");
-
-
-                //foreach (var item in lGrid)
-                //{
-                //    item.TranslationX = 20;
-                //}
-
-                return new ViewCell()
-                {
-                    View = grid
-                };
-            });
-
-
-            
-
-            // grid.Children.Add(Image);
-
-            this.Content = lv;
-
+           // scroll.Content = ContactStack;
 
 
         }
-        public Label Contactlbl(string name, int tlfnr, string Email)
+        public ScrollView Scroller()
         {
-
-
-            Label lbl = new Label
+            scroll = new Xamarin.Forms.ScrollView
             {
-                Text = "Navn:" + name + "\n" + "Tlf.Nr:" + tlfnr + "\n" + "Email:" + Email + "\n",
-
+                Orientation = ScrollOrientation.Vertical,
+                Content = ContactStack,
+                WidthRequest = Application.Current.MainPage.Width - 100,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.EndAndExpand,
+                BackgroundColor = Color.Black
             };
-            // Image.Source = "FoodImage1";
 
-            return lbl;
+            return scroll;
         }
-        public ListView LvView()
+        public Editor Name()
         {
-            lv = new ListView()
+            Editor userName = new Editor
             {
-                RowHeight = 200,
+                Text = "Name:",
+                Keyboard = Keyboard.Default,
+                BackgroundColor = Color.Beige,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                HeightRequest = 60,
+                WidthRequest = Application.Current.MainPage.Width - 50
 
             };
-
-            return lv;
+            return userName;
         }
-        public Image ImagCell()
+        public Editor LastName()
         {
-            Image imgcell = new Image
+            Editor lastName = new Editor
             {
-                Source = "FoodImage1",
-                //HorizontalOptions = LayoutOptions.Start,
+                Text = "Last name:",
+                Keyboard = Keyboard.Default,
+                BackgroundColor = Color.Beige,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                HeightRequest = 60,
+                WidthRequest = Application.Current.MainPage.Width - 50
+            };
+            return lastName;
+        }
+        public Editor Title()
+        {
+            Editor title = new Editor
+            {
+                Text = "Title:",
+                Keyboard = Keyboard.Default,
+                BackgroundColor = Color.Beige,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.EndAndExpand,
+                HeightRequest = 60,
+                WidthRequest = Application.Current.MainPage.Width - 50
 
             };
-            return imgcell;
+            return title;
+        }
+        public Editor Message()
+        {
+            Editor Message = new Editor
+            {
+                Text = "Write your message here:",
+                
+                Keyboard = Keyboard.Default,
+                BackgroundColor = Color.Beige,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.EndAndExpand,
+                HeightRequest = 200,
+                WidthRequest = Application.Current.MainPage.Width - 50
+                
+            };
+            return Message;
+        }
+        public Editor Message2()
+        {
+            Editor message = new Editor
+            {
+                Text = "Write your message here:",
+
+                Keyboard = Keyboard.Default,
+                BackgroundColor = Color.Beige,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.EndAndExpand,
+                HeightRequest = 200,
+                WidthRequest = Application.Current.MainPage.Width - 50
+
+            };
+            return message;
         }
 
     }
