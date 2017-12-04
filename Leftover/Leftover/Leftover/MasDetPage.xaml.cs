@@ -15,9 +15,14 @@ namespace Leftover
         //Use "Application.Current.MainPage = new MasDetPage(new PageName());" so master page can work with all the other pages or something like this "var mdp = Application.Current.MainPage as MasDetPage;  await mdp.Detail.Navigation.PushAsync(myNextPage);"
         public MasDetPage (Page page)
 		{
-			InitializeComponent ();
+           
+            InitializeComponent ();
+
             this.Master = new Master();
-            this.Detail = new NavigationPage(page);
+            this.Detail = page;
+            
+            
         }
+        
 	}
 }

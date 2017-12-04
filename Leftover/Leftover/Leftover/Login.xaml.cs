@@ -26,8 +26,9 @@ namespace Leftover
                 //p = new NavigationPage();
 
                 //Navigation.PushModalAsync(new Leftover.Shop());
-
-                Application.Current.MainPage = new MasDetPage(new GridTest());
+                NavigationPage page = new NavigationPage(new GridTest());
+                Application.Current.MainPage = new MasDetPage(page);
+                
 
             }
             //if logged in Application.Current.MainPage = new MasDetPage(new GridTest());

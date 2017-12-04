@@ -30,9 +30,9 @@ namespace Leftover
 
             var page = new NavigationPage();
 
+            
 
-
-            NavigationPage.SetTitleIcon(page, "FoodImage1.jpg");
+            //NavigationPage.SetTitleIcon(page, "FoodImage1.jpg");
 
 
             catGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(99) });
@@ -368,7 +368,7 @@ namespace Leftover
         //}
         void ImageFirstTapped(object sender, EventArgs e)
         {
-
+           
             Navigation.PushAsync(new MasDetPage(new Shop()));
         }
 

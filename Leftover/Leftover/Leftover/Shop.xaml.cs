@@ -18,7 +18,8 @@ namespace Leftover
         public Shop()
         {
             InitializeComponent();
-            
+
+            NavigationPage.SetBackButtonTitle(this, "Shop");
             // This for loop will populate the page with all the shops/items. (Needs to be implemented: Need the shops/items(data) from somewhere else, distance need to be calculated)
             for (int i = 0; i <= 9; i++)
             {
@@ -47,6 +48,9 @@ namespace Leftover
             this.Content = Scroll;
 
         }
+
+
+       
 
         /// <summary>
         /// Labels, boxview and image for one shop/item. Can be edited for the future (Need to be fixed: work on all screens)
@@ -146,6 +150,7 @@ namespace Leftover
         }
         public void ButtonClicked(object sender, EventArgs e)
         {
+            
             Navigation.PushAsync(new MasDetPage(new Food()));
 
         }

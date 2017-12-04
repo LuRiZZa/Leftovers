@@ -29,7 +29,7 @@ namespace Leftover
             InitializeComponent();
 
             ContentPresenter p;
-
+            
 
             //AbsoluteLayout al = new AbsoluteLayout()
             //{

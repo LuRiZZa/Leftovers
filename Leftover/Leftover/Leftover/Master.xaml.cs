@@ -368,7 +368,7 @@ namespace Leftover
 
         private void ContactBtn_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new MasDetPage( new Contact()));
+            Navigation.PushAsync(new NavigationPage(new Contact()));
         }
 
         private void SetBtn_Clicked(object sender, EventArgs e)
